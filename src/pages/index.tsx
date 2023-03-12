@@ -1,7 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,6 +14,7 @@ export default function Home() {
         <p>Миля Тагировна</p>
         <h1>Миля Тагировна</h1>
         <p className='medium'>Миля Тагировна</p>
+        <Link href={`/blog/`}>Blog</Link>
       </main>
     </>
   )

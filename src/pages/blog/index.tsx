@@ -21,7 +21,6 @@ export default function Blog({ posts }) {
 
 export const getStaticProps = async () => {
   const res = await client.getEntries({ content_type: 'post' });
-  console.log(res.items);
 
   return {
     props: {

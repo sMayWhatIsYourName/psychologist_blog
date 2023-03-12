@@ -1,7 +1,9 @@
 import { client } from "../../../lib/contentful/client";
 
 export default function BlogItem({ post }) {
-  console.log(post);
+  if (!post) {
+    return null;
+  }
 
   return (
     <>
@@ -41,6 +43,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries({ content_type: "post" });
+  
   const paths = res.items.map((item) => ({
     params: { slug: item.fields.slug },
   }));
